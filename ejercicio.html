@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NVL-JS-P9b</title>
+</head>
+<body>
+	<script>
+		//Declaramos la variables que contienen las cadenas dadas
+		var c1 = 'Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo';
+		var c2 = 'Madrid.Sevilla.Barcelona.Valencia.Zaragoza.Bilbao.Donosti';
+
+    	//Dividimos las cadenas en matrices
+    	c1 = c1.split(',');
+    	c2 = c2.split('.');
+    	
+    	//Creamos una matriz con un elemento
+    	var matriz = [[,]];
+    	//Borramos el elemento creado para dejar la matriz vacía
+    	matriz.pop();
+    	//Creamos un bucle para ir introduciendo los pares de datos, dia y ciudad
+    	for (var i = 0; i < c1.length; i++) {
+    		//Introducimos los datos con el método push
+    		matriz.push([c1[i],c2[i]]);
+    	}
+
+    	//Mostramos los valores en el documento html
+    	//Escribimos el encabezamiento de la tabla
+    	document.write('<table style="text-align:center""><tr><th>Día</th><th>Ciudad</th></tr>');
+    	//Creamos un bucle para recorrer todos los elementos de la matriz
+    	for (var i = 0; i < matriz.length; i++) {
+    		//Por cada elemento, escribimos una fila con los datos
+    		document.write('<tr>');
+    		document.write('<td>' + matriz[i][0] + '</td>');
+    		document.write('<td>' + matriz[i][1] + '</td>');
+    		document.write('</tr>');
+    	}
+    	//Cerramos la etiqueta de la tabla
+    	document.write('</table>');
+    </script>
+</body>
+</html>
